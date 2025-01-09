@@ -1,0 +1,60 @@
+# MATLAB/Simulink specific
+*.asv
+*.slxc
+*.mexmaci64
+*.mexw64
+*.mexa64
+*.m~
+slprj/
+sccprj/
+codegen/
+
+# Test results
+tests/test_results/
+*.png
+*.html
+*.fig
+
+# Autosave files
+*.autosave
+
+# Derived content
+*.pdf
+*.ps
+*.eps
+*.jpg
+*.jpeg
+*.log
+
+# Compiled MEX files
+*.mex*
+
+# Packaged app and toolbox files
+*.mlappinstall
+*.mltbx
+
+# Generated helpsearch folders
+helpsearch*/
+
+# Simulink cache folders
+*.slxc
+
+# Simulink code generation folders
+slprj/
+sccprj/
+codegen/
+
+# Matlab crash dumps
+*.mdmp
+
+# Octave session info
+octave-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db 
