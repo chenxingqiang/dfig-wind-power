@@ -4,6 +4,7 @@ A MATLAB/Simulink implementation of a Doubly-Fed Induction Generator (DFIG) wind
 
 ## Features
 
+### 🎛️ **Advanced Control Strategies**
 - **Fault Ride-Through Control**
   - Coordinated control of RSC and GSC during grid faults
   - ESS support for voltage stability
@@ -23,6 +24,13 @@ A MATLAB/Simulink implementation of a Doubly-Fed Induction Generator (DFIG) wind
   - LSTM-based power prediction
   - DRL-optimized SOC management
   - Adaptive control strategies
+
+### 🖥️ **Professional GUI Tools** *(NEW in v2.0)*
+- **Master Control Center** - Unified system launcher and monitor
+- **Interactive Parameter Configuration** - Professional multi-tab GUI for system setup
+- **Real-time Simulation Dashboard** - Live monitoring with fault injection capabilities
+- **Advanced Performance Analyzer** - Comprehensive analysis and reporting tools
+- **Seamless Simulink Integration** - Automated model setup and execution
 
 ## System Architecture
 
@@ -72,6 +80,26 @@ A MATLAB/Simulink implementation of a Doubly-Fed Induction Generator (DFIG) wind
    ```matlab
    addpath(genpath(pwd));
    ```
+
+## 🚀 Quick Start with GUI Tools
+
+### **Option 1: Master Control Center (Recommended)**
+```matlab
+dfig_system_launcher  % Launch the unified control center
+```
+This opens the **Master Control Center** with access to all system tools:
+- 🎛️ Parameter Configuration GUI
+- 🖥️ Real-time Simulation Dashboard  
+- 📊 Advanced Performance Analyzer
+- 🎯 Simulink Model Integration
+- 🧪 Test Suite Execution
+
+### **Option 2: Individual Tools**
+```matlab
+gui_parameter_config      % Parameter configuration
+gui_simulation_dashboard  % Real-time dashboard
+performance_analyzer      % Analysis and reporting
+```
 
 ## Running Tests
 

@@ -1,19 +1,36 @@
-1.故障穿越控制策略
-变流器响应：
-转子侧变流器快速限制过电流，防止DFIG脱网；网侧变流器提供无功功率支撑电网电压恢复。
-储能系统介入：
-储能通过网侧变流器提供额外的无功功率，缓解变流器容量不足的问题。
-储能系统通过LSTM预测电压恢复过程中的功率需求，优化释放功率。
-2.一次调频控制策略
-惯量响应：风机旋转备用用于短时惯量响应，平抑频率波动。
-变流器与储能协同调频：
-储能通过网侧变流器提供持续的有功功率支持，弥补风机惯量响应能力的不足。
-结合深度强化学习（DRL）优化储能SOC分配，动态调整变流器输出目标。
-3.动态模式切换机制
-在电网故障条件下，储能系统切换至构网型控制模式，通过网侧变流器主动提供频率与电压基准。
-故障恢复后，储能系统返回跟网型控制，与变流器协同优化功率输出。
-4.深度学习辅助SOC优化
-LSTM预测电网扰动对功率需求的变化。
-DRL通过奖励机制优化SOC分配策略，确保储能在故障穿越与调频过程中的高效利用。
+# DFIG Wind Power System Control Strategies
 
-MATLAB  实现
+## 1. Fault Ride-Through (FRT) Control Strategy
+
+### Converter Response:
+- **Rotor-Side Converter (RSC)**: Rapid overcurrent limiting to prevent DFIG disconnection from the grid
+- **Grid-Side Converter (GSC)**: Provides reactive power support for grid voltage recovery
+
+### Energy Storage System (ESS) Integration:
+- ESS provides additional reactive power through the grid-side converter to alleviate converter capacity limitations
+- ESS utilizes LSTM prediction for power demand during voltage recovery process to optimize power release
+
+## 2. Primary Frequency Control Strategy
+
+### Inertial Response:
+- Wind turbine rotational reserves provide short-term inertial response to mitigate frequency fluctuations
+
+### Coordinated Converter-ESS Frequency Control:
+- ESS provides continuous active power support through the grid-side converter, compensating for insufficient wind turbine inertial response capability
+- Deep Reinforcement Learning (DRL) optimizes ESS SOC allocation and dynamically adjusts converter output targets
+
+## 3. Dynamic Mode Switching Mechanism
+
+- **Grid Fault Conditions**: ESS switches to grid-forming control mode, actively providing frequency and voltage references through the grid-side converter
+- **Post-Fault Recovery**: ESS returns to grid-following control mode, coordinating with converters to optimize power output
+
+## 4. Deep Learning-Assisted SOC Optimization
+
+### LSTM Prediction:
+- Predicts power demand variations due to grid disturbances
+
+### DRL Optimization:
+- Utilizes reward mechanisms to optimize SOC allocation strategies, ensuring efficient ESS utilization during fault ride-through and frequency regulation processes
+
+---
+**Implementation**: MATLAB/Simulink
