@@ -1,1 +1,27 @@
-% This will be a Simulink model file (.slx) 
+% DFIG Wind Power System Simulink Model
+% 
+% ⚠️  IMPORTANT: This is a placeholder file!
+% 
+% To create the complete working Simulink model, please run:
+%
+% >> cd simulation
+% >> setup_simulink_model
+%
+% This will create the full dfig_wind_system.slx with:
+% • DFIG model with RSC/GSC control
+% • Energy storage system integration  
+% • Advanced control strategies (FRT, frequency control, mode switching)
+% • Deep learning components (LSTM + DRL)
+% • Comprehensive testing and measurement systems
+%
+% For detailed instructions, see: simulation/README_Simulink_Setup.md
+% GitHub issue: https://github.com/chenxingqiang/dfig-wind-power/issues/2
+%
+% The setup script will replace this file with the complete Simulink model.
+
+fprintf('\n⚠️  DFIG Simulink Model Setup Required ⚠️\n\n');
+fprintf('This placeholder will be replaced with the complete model.\n');
+fprintf('Please run the setup script:\n\n');
+fprintf('  >> cd simulation\n');
+fprintf('  >> setup_simulink_model\n\n');
+fprintf('For detailed instructions: simulation/README_Simulink_Setup.md\n\n');

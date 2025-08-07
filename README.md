@@ -51,7 +51,7 @@ A MATLAB/Simulink implementation of a Doubly-Fed Induction Generator (DFIG) wind
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/dfig-wind-power.git
+   git clone https://github.com/chenxingqiang/dfig-wind-power.git
    cd dfig-wind-power
    ```
 
@@ -60,7 +60,15 @@ A MATLAB/Simulink implementation of a Doubly-Fed Induction Generator (DFIG) wind
    cd /path/to/dfig-wind-power
    ```
 
-3. Add project paths:
+3. **🚀 NEW: Setup Simulink Model (REQUIRED)**
+   ```matlab
+   cd simulation
+   setup_simulink_model  % Creates working dfig_wind_system.slx
+   ```
+   
+   📖 **For detailed setup instructions, see**: `simulation/README_Simulink_Setup.md`
+
+4. Add project paths (if not done automatically):
    ```matlab
    addpath(genpath(pwd));
    ```
@@ -141,6 +149,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Your Name - [@yourusername](https://github.com/yourusername)
+Your Name - [@ychenxingqiang](https://github.com/ychenxingqiang)
 
-Project Link: [https://github.com/yourusername/dfig-wind-power](https://github.com/yourusername/dfig-wind-power) 
+Project Link: [https://github.com/ychenxingqiang/dfig-wind-power](https://github.com/ychenxingqiang/dfig-wind-power) 
