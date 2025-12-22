@@ -152,17 +152,42 @@ set_param(model_name, 'RelTol', '1e-3');
 set_param(model_name, 'AbsTol', '1e-6');
 
 %% Configure S-Function Parameters
-% DFIG S-Function
+% DFIG S-Function - requires: Rs, Rr, Ls, Lr, Lm, H, fn, poles, wr_rated
 set_param([model_name '/DFIG System'], 'Parameters', ...
-    'struct(''rated_power'', 2e6, ''rated_voltage'', 690, ''pole_pairs'', 2)');
+    ['struct(' ...
+     '''Rs'', 0.00706, ' ...       % Stator resistance (pu)
+     '''Rr'', 0.005, ' ...         % Rotor resistance (pu)
+     '''Ls'', 0.171, ' ...         % Stator inductance (pu)
+     '''Lr'', 0.156, ' ...         % Rotor inductance (pu)
+     '''Lm'', 2.9, ' ...           % Mutual inductance (pu)
+     '''H'', 5.04, ' ...           % Inertia constant (s)
+     '''fn'', 50, ' ...            % Nominal frequency (Hz)
+     '''poles'', 4, ' ...          % Number of poles
+     '''wr_rated'', 1.2)']);       % Rated rotor speed (pu)
 
-% ESS S-Function  
+% ESS S-Function - requires: C, En, eta, tau, SOCmax, SOCmin
 set_param([model_name '/ESS System'], 'Parameters', ...
-    'struct(''rated_power'', 0.5e6, ''capacity'', 1e6, ''efficiency'', 0.95)');
+    ['struct(' ...
+     '''C'', 0.01, ' ...           % DC-link capacitance (F)
+     '''En'', 1e6, ' ...           % Rated energy capacity (Wh)
+     '''eta'', 0.95, ' ...         % Efficiency
+     '''tau'', 0.05, ' ...         % Time constant (s)
+     '''SOCmax'', 0.9, ' ...       % Maximum SOC
+     '''SOCmin'', 0.2)']);         % Minimum SOC
 
-% Controller S-Function
+% Controller S-Function - requires: Ts, ctrl, dfig, conv structures
 set_param([model_name '/Main Controller'], 'Parameters', ...
-    'struct(''sample_time'', 1e-4, ''enable_deep_learning'', true)');
+    ['struct(' ...
+     '''Ts'', 1e-4, ' ...          % Sample time (s)
+     '''ctrl'', struct(' ...
+         '''mode'', struct(' ...
+             '''Vth'', 0.9, ' ...  % Voltage threshold (pu)
+             '''fth'', 0.02)), ' ... % Frequency threshold (pu)
+     '''dfig'', struct(' ...
+         '''fn'', 50), ' ...       % Nominal frequency (Hz)
+     '''conv'', struct(' ...
+         '''Vdc'', 1200, ' ...     % DC voltage (V)
+         '''Imax'', 1.5))']);      % Maximum current (pu)
 
 %% Add Documentation
 add_block('simulink/Sinks/Display', [model_name '/Status_Display'], ...
